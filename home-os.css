@@ -1,0 +1,18 @@
+.os-home { display: grid; gap: 20px; }
+.os-hello h2 { margin: 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600; }
+.os-hello p { margin: 6px 0 0; color: var(--muted); }
+.os-search-wrap { position: relative; max-width: 520px; }
+.os-search-wrap input { width: 100%; min-height: 48px; border: 1px solid var(--line); border-radius: 14px; padding: 0 16px 0 44px; font: inherit; background: #fff; box-shadow: var(--shadow); }
+.os-search-wrap::before { content: ""; position: absolute; left: 16px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); border: 2px solid #94a3b8; border-radius: 50%; pointer-events: none; }
+.pin-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+.pin-card { display: flex; flex-direction: column; gap: 10px; min-height: 148px; padding: 18px; border-radius: 20px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); text-decoration: none; color: inherit; transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.pin-card:hover { transform: translateY(-3px); border-color: #93c5fd; box-shadow: 0 12px 28px rgb(15 23 42 / 0.08); }
+.pin-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.pin-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+.pin-card h3 { margin: 0; font-size: 15px; letter-spacing: -0.01em; }
+.pin-card p { margin: 0; font-size: 13px; color: var(--muted); }
+.os-stats { display: grid; gap: 12px; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.os-stat { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.os-stat .num { font-size: 22px; }
+.os-activity { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 8px 20px 16px; box-shadow: var(--shadow); }
+@media (max-width: 900px) { .os-stats { grid-template-columns: 1fr 1fr; } }
