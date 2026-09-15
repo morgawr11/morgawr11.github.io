@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>220th Training Board</title>
+    <meta name="description" content="UNCLASSIFIED training demo board — 220th Airlift Wing" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="banner">UNCLASSIFIED // TRAINING DEMO // FICTITIOUS DATA</div>
+    <div class="shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 16l10-12 10 12h-4l-6-7-6 7H2z"/><path d="M11 16v6h2v-6"/></svg>
+          </span>
+          <div>
+            <p class="brand-kicker">220th Airlift Wing</p>
+            <p class="brand-name">Training Board</p>
+          </div>
+        </div>
+        <nav id="nav"></nav>
+        <div class="sidebar-foot">
+          <p>Public GitHub Pages copy. Clock is live. Lists save in this browser.</p>
+        </div>
+      </aside>
+      <div class="main">
+        <header class="top">
+          <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+          <div class="min">
+            <h1 id="pageTitle">Dashboard</h1>
+            <p class="clock" id="clock">Live clock starting…</p>
+          </div>
+          <div class="top-actions">
+            <span class="live-pill"><span class="live-dot"></span> LIVE</span>
+            <a class="edit-btn" href="#/update">Edit numbers</a>
+          </div>
+        </header>
+        <main id="app"></main>
+      </div>
+    </div>
+    <div class="scrim" id="scrim" hidden></div>
+    <script src="app.js"></script>
+  </body>
+</html>
