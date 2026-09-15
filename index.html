@@ -14,8 +14,8 @@
     <div class="shell">
       <aside class="sidebar" id="sidebar">
         <div class="brand">
-          <span class="brand-mark" id="brandMark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 16l10-12 10 12h-4l-6-7-6 7H2z"/><path d="M11 16v6h2v-6"/></svg>
+          <span class="brand-mark has-img" id="brandMark">
+            <img id="unitLogo" alt="220th Airlift Wing" />
           </span>
           <div>
             <p class="brand-kicker" id="brandKicker">220th Airlift Wing</p>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <nav id="nav"></nav>
-        <div class="sidebar-foot" id="sidebarFoot">Public GitHub Pages copy. Clock is live. Lists save in this browser.</div>
+        <div class="sidebar-foot" id="sidebarFoot">Philippine Air Force · 220th Airlift Wing</div>
       </aside>
       <div class="main">
         <header class="top">
@@ -33,14 +33,19 @@
             <p class="clock" id="clock">Live clock starting…</p>
           </div>
           <div class="top-actions">
+            <img class="paf-seal" id="pafSeal" alt="Philippine Air Force" />
             <span class="live-pill"><span class="live-dot"></span> LIVE</span>
             <a class="edit-btn" href="#/update">Edit board</a>
           </div>
         </header>
         <main id="app"></main>
+        <footer class="focus-bar" id="focusBar">
+          <img id="focusMark" alt="FOCUS PAF — Mission, Capability, Values" />
+        </footer>
       </div>
     </div>
     <div class="scrim" id="scrim" hidden></div>
+    <script src="marks.js"></script>
     <script src="app.js"></script>
     <script src="profile.js"></script>
   </body>
