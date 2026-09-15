@@ -3,7 +3,7 @@
     unit: "220th Airlift Wing",
     board: "Training Board",
     banner: "UNCLASSIFIED // TRAINING DEMO // FICTITIOUS DATA",
-    foot: "Public demo. Clock is live. Lists save in this browser.",
+    foot: "Philippine Air Force · 220th Airlift Wing · FOCUS PAF",
     logo: "",
   };
 
@@ -15,8 +15,14 @@
     });
   }
 
+  function stockUnitSrc() {
+    const el = document.getElementById("unitLogo");
+    return (el && el.getAttribute("src")) || "";
+  }
   function markSvg() {
-    return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 16l10-12 10 12h-4l-6-7-6 7H2z"/><path d="M11 16v6h2v-6"/></svg>';
+    const src = stockUnitSrc();
+    if (src) return '<img id="unitLogo" alt="220th Airlift Wing" src="' + src + '">';
+    return '<img id="unitLogo" alt="220th Airlift Wing">';
   }
 
   function applyChrome() {
@@ -36,13 +42,14 @@
     if (kicker) kicker.textContent = id.unit || DEFAULT_IDENTITY.unit;
     if (name) name.textContent = id.board || DEFAULT_IDENTITY.board;
     if (foot) foot.textContent = id.foot || DEFAULT_IDENTITY.foot;
-    document.title = id.board || DEFAULT_IDENTITY.board;
+    document.title = (id.unit || DEFAULT_IDENTITY.unit) + " · " + (id.board || DEFAULT_IDENTITY.board);
     if (mark) {
+      mark.classList.add("has-img");
+      const current = document.getElementById("unitLogo");
+      const keep = current && current.getAttribute("src");
       if (id.logo) {
-        mark.classList.add("has-img");
-        mark.innerHTML = '<img alt="" src="' + id.logo + '">';
-      } else {
-        mark.classList.remove("has-img");
+        mark.innerHTML = '<img id="unitLogo" alt="220th Airlift Wing" src="' + id.logo + '">';
+      } else if (!keep) {
         mark.innerHTML = markSvg();
       }
     }
