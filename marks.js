@@ -4,18 +4,20 @@
     if (el && data) el.src = "data:image/jpeg;base64," + data.trim();
   }
   function paint(parts) {
-    set("unitLogo", parts[0]);
-    set("pafSeal", parts[1]);
-    set("focusMark", parts[2]);
+    const id = (window.board && board.identity) || {};
+    if (!id.logo) set("unitLogo", parts[0]);
+    if (!id.pafLogo) set("pafSeal", parts[1]);
+    if (!id.focusLogo) set("focusMark", parts[2]);
   }
-  function load() {
+  function loadMarks() {
     return Promise.all([
       fetch("logos/aw220.b64").then(function (r) { return r.ok ? r.text() : ""; }),
       fetch("logos/paf.b64").then(function (r) { return r.ok ? r.text() : ""; }),
       fetch("logos/focus.b64").then(function (r) { return r.ok ? r.text() : ""; }),
     ]).then(paint);
   }
-  load();
-  window.addEventListener("hashchange", function () { load(); });
-  document.addEventListener("DOMContentLoaded", load);
+  window.loadMarks = loadMarks;
+  loadMarks();
+  window.addEventListener("hashchange", function () { loadMarks(); });
+  document.addEventListener("DOMContentLoaded", loadMarks);
 })();
